@@ -1,0 +1,71 @@
+{% extends "app/layout.html" %}
+{% block content %}
+{% if form != None %}
+<br>
+<h2 class="h2">Отзыв</h2>
+<br>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+        {{ form.name }} <br><br>
+        <label for="{{ form.city.id_for_label }}">{{ form.city.label }}:</label>
+        {{ form.city }} <br><br>
+        <label for="{{ form.gender.id_for_label }}">{{ form.gender.label }}:</label>
+        {{ form.gender }} <br><br>
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+        {{ form.email }} <br><br>
+        <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label>
+        {{ form.message }} <br><br>
+        <label for="{{ form.notice.id_for_label }}">{{ form.notice.label }}:</label>
+        {{ form.notice }} <br><br>
+
+        <input id="pyp"  type="submit" class="save btn btn-default" value="Опубликовать отзыв">
+    </form>
+</div>
+<script>
+        const elem = document.getElementById('pyp');
+            elem.addEventListener('mouseover', function () {
+                elem.style.color = "Green";
+            });
+            elem.addEventListener('mouseout', function () {
+                elem.style.color = "black";
+             });
+        const elem2 = document.getElementById('id_name');
+            elem2.addEventListener('mouseover', function () {
+                elem2.style.backgroundColor = '#9D9D9DA8';
+            });
+            elem2.addEventListener('mouseout', function () {
+                elem2.style.backgroundColor = '#FFFFFFA8';
+            });
+         
+        const elem3 = document.getElementById('id_city');
+            elem3.addEventListener('mouseover', function () {
+                elem3.style.backgroundColor = '#9D9D9DA8';
+            });
+            elem3.addEventListener('mouseout', function () {
+                elem3.style.backgroundColor = '#FFFFFFA8';
+            });
+        const elem4 = document.getElementById('id_email');
+            elem4.addEventListener('mouseover', function () {
+                elem4.style.backgroundColor = '#9D9D9DA8';
+            });
+            elem4.addEventListener('mouseout', function () {
+                elem4.style.backgroundColor = '#FFFFFFA8';
+            });
+
+
+</script>
+{% else %}
+<br>
+<h2 class="h2">Спасибо за Ваш отзыв!</h2>
+<ul>
+    <li><span>Имя:</span> {{ data.name }}</li>
+    <li><span>Город:</span> {{ data.city }}</li>
+    <li><span>Пол:</span> {{ data.gender }}</li>
+    <li><span>Получать новости с сайта на e-mail:</span> {{ data.notice }}</li>
+    <li><span>Ваш e-mail:</span> {{ data.email }}</li>
+    <li><span>Ваш отзыв:</span> {{ data.message }}</li>
+</ul>
+{% endif %}
+{% endblock %}

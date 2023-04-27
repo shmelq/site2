@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head class="h2">
+    <meta charset="utf-8" />
+    <title>Полезные ресурсы</title>
+</head>
+
+
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<body>
+    <content class="h2">
+        {% load static %}
+
+    </content>
+    <div class="h2">
+    <a href="https://lafmarket.ru/?_openstat=ZGlyZWN0LnlhbmRleC5ydTs2Njk3MzEyMjsxMTMzNDIwMDYwMTt5YW5kZXgucnU6cHJlbWl1bQ&yclid=6735258345464397823" target="_blank"> <img src="{% static 'app/content/1.png' %}" alt="Logo 1" /></a>
+    <a href="https://pskov.fitauto.ru/" target="_blank"> <img src="{% static 'app/content/2.png' %}" alt="Logo 2" /></a>
+    <a href="https://www.youtube.com/channel/UCH_tSjkwIYaGJW4lGkZOuIA" target="_blank"> <img src="{% static 'app/content/3.png' %}" alt="Logo 3" /></a>
+    </div>
+</body>
+{% endblock %}
+</html>
